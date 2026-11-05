@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brigitte Núñez · Ingeniera Civil y Project Manager</title>
+<meta name="description" content="Portafolio profesional de Brigitte Núñez, Ingeniera Civil y Project Manager con más de 10 años de experiencia en construcción, planificación y Project Controls. Madrid, España.">
+<meta property="og:title" content="Brigitte Núñez · Ingeniera Civil y Project Manager">
+<meta property="og:description" content="Construcción | Planificación | Project Controls · Madrid, España">
+<meta property="og:image" content="https://brigitte-nunez-maldonado.github.io/img/marca.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13294b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2313294b'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%232fb3a6' text-anchor='middle'%3EBN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<a class="saltar" href="#cartera">Saltar a la cartera de proyectos</a>
+
+<header class="barra" id="barra">
+  <div class="contenedor barra__fila">
+    <a class="logo" href="#inicio" aria-label="Brigitte Núñez, ir al inicio">
+      <span class="logo__bn">BN</span><span class="logo__txt">Brigitte Núñez</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" class="menu" aria-label="Principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#cartera">Cartera</a>
+      <a href="#formacion">Formación</a>
+      <a href="#competencias">Competencias</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ================= PORTADA ================= -->
+  <section id="inicio" class="portada">
+    <div class="contenedor">
+      <div class="portada__banner">
+        <img class="portada__marca" src="img/marca.jpg" width="1536" height="576"
+             alt="Marca personal: Brigitte Núñez. Ingeniería · Dirección de proyectos. Construcción, Planificación, Project Controls. Madrid, España.">
+        <figure class="portada__retrato">
+          <img src="img/retrato.jpg" width="1536" height="1152" alt="Retrato profesional de Brigitte Núñez">
+        </figure>
+      </div>
+
+      <div class="portada__cuerpo">
+        <div class="portada__texto">
+          <h1 data-p="nombre">Brigitte Núñez</h1>
+          <p class="portada__titular" data-p="titular"></p>
+          <p class="portada__esp" data-p="especialidades"></p>
+          <div class="botones">
+            <a class="btn btn--teal" href="#cartera">Ver cartera de proyectos</a>
+            <a class="btn btn--borde" data-p-href="cv" download>Descargar CV</a>
+            <a class="btn btn--navy" data-p-href="linkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <aside class="tarjeta-contacto" aria-label="Datos de contacto">
+          <div class="tarjeta-contacto__datos">
+            <p class="fuerte"><span data-p="ubicacion"></span> · <span data-p="disponibilidad"></span></p>
+            <p><a data-p-tel></a></p>
+            <p><a data-p-mail></a></p>
+            <p><a data-p-href="linkedin" target="_blank" rel="noopener" data-p="linkedinTexto"></a></p>
+          </div>
+          <div class="qr">
+            <a data-p-href="linkedin" target="_blank" rel="noopener" aria-label="Abrir perfil de LinkedIn">
+              <img data-p-src="qr" width="120" height="120" alt="Código QR que abre el perfil de LinkedIn de Brigitte Núñez">
+            </a>
+            <a class="qr__descarga" data-p-href="qr" download="QR_LinkedIn_Brigitte_Nunez.jpg">Descargar QR</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CARTERA ================= -->
+  <section id="cartera" class="seccion">
+    <div class="contenedor">
+      <h2 class="titulo">Cartera de proyectos</h2>
+      <p class="subtitulo">Un proyecto por vista · fotografía protagonista y datos clave de cada obra.</p>
+
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar proyectos por sector"></div>
+
+      <article class="proyecto" id="proyecto" aria-live="polite">
+        <div class="proyecto__media">
+          <div class="proyecto__foto">
+            <img id="pFoto" alt="">
+            <video id="pVideo" hidden muted loop playsinline controls preload="metadata"></video>
+          </div>
+          <div class="proyecto__miniaturas" id="pMinis" aria-label="Fotos de este proyecto"></div>
+        </div>
+        <div class="proyecto__datos">
+          <h3 id="pNombre"></h3>
+          <p class="proyecto__pais" id="pPais"></p>
+          <p class="proyecto__cargo" id="pCargo"></p>
+          <div class="chips" id="pChips"></div>
+          <div id="pResBloque">
+            <p class="etiqueta">Resultados</p>
+            <p class="proyecto__res" id="pRes"></p>
+          </div>
+          <ul class="proyecto__det" id="pDet"></ul>
+          <div class="proyecto__nav">
+            <p class="etiqueta" id="pContador">Proyecto 1 / 8</p>
+            <div class="proyecto__botones">
+              <button class="btn btn--borde" id="pAnt" type="button">‹ Anterior</button>
+              <button class="btn btn--teal" id="pSig" type="button">Siguiente ›</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <p class="ayuda">Navega con los botones, las flechas del teclado o deslizando en el móvil.</p>
+    </div>
+  </section>
+
+  <!-- ================= FORMACIÓN ================= -->
+  <section id="formacion" class="seccion seccion--gris">
+    <div class="contenedor">
+      <h2 class="titulo">Formación y logros académicos</h2>
+      <p class="subtitulo">Formación presentada en el mismo orden que en el CV.</p>
+      <div id="listaFormacion" class="formacion"></div>
+    </div>
+  </section>
+
+  <!-- ================= COMPETENCIAS ================= -->
+  <section id="competencias" class="seccion">
+    <div class="contenedor">
+      <h2 class="titulo">Cómo puedo aportar</h2>
+      <p class="subtitulo" id="aporte"></p>
+      <div class="competencias" id="listaCompetencias"></div>
+
+      <h3 class="titulo-sm">Sectores de experiencia</h3>
+      <div class="chips chips--grandes" id="listaSectores"></div>
+
+      <div class="caja-complementaria">
+        <h3 class="titulo-sm titulo-sm--teal">Formación complementaria, certificaciones e IA</h3>
+        <ul class="lista-puntos" id="listaComplementaria"></ul>
+        <p><strong>En preparación:</strong> <span id="listaPreparacion"></span></p>
+        <p><strong>IA generativa:</strong> <span id="listaIA"></span></p>
+        <p><strong>Idiomas:</strong> <span id="idiomas"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTO ================= -->
+  <section id="contacto" class="seccion seccion--gris">
+    <div class="contenedor contacto">
+      <div>
+        <h2 class="titulo">Hablemos de tu próximo proyecto</h2>
+        <p class="subtitulo">Disponible para conversar sobre oportunidades y colaboraciones en Madrid y otros proyectos.</p>
+        <form class="formulario" id="formulario" novalidate>
+          <label>Nombre<input name="nombre" autocomplete="name" required></label>
+          <label>Correo electrónico<input name="correo" type="email" autocomplete="email" required></label>
+          <label>Proyecto / consulta<input name="asunto" required></label>
+          <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
+          <button class="btn btn--teal" type="submit">Enviar mensaje</button>
+          <p class="ayuda" id="formAyuda">Al enviar se abrirá tu programa de correo con el mensaje preparado.</p>
+        </form>
+      </div>
+      <aside class="contacto__tarjeta">
+        <h3>Contacto</h3>
+        <p class="fuerte" data-p="ubicacion"></p>
+        <p data-p="disponibilidad"></p>
+        <p><a data-p-tel></a></p>
+        <p><a data-p-mail></a></p>
+        <hr>
+        <a class="enlace-teal" data-p-href="linkedin" target="_blank" rel="noopener">Ver perfil de LinkedIn ↗</a>
+        <div class="qr qr--fila">
+          <a data-p-href="linkedin" target="_blank" rel="noopener" aria-label="Abrir perfil de LinkedIn">
+            <img data-p-src="qr" width="110" height="110" alt="Código QR que abre el perfil de LinkedIn de Brigitte Núñez">
+          </a>
+          <a class="qr__descarga" data-p-href="qr" download="QR_LinkedIn_Brigitte_Nunez.jpg">Descargar QR</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__fila">
+    <div>
+      <p class="fuerte">Brigitte Núñez · Ingeniera Civil y Project Manager</p>
+      <p><span data-p="ubicacion"></span> · <span data-p="disponibilidad"></span></p>
+      <p><a data-p-tel></a> · <a data-p-mail></a></p>
+    </div>
+    <div class="pie__enlaces">
+      <a data-p-href="cv" download>CV</a>
+      <a data-p-href="linkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</footer>
+
+<div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="visor__cerrar" id="visorCerrar" aria-label="Cerrar">×</button>
+  <img id="visorImg" alt="">
+</div>
+
+<script src="datos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
