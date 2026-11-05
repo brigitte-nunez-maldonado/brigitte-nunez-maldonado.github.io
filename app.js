@@ -51,11 +51,16 @@
   visor.addEventListener("click", function (e) { if (e.target === visor) cerrarVisor(); });
 
   /* ---------- Cartera ---------- */
+  var OTROS = "Otros proyectos";
   var todos = D.proyectos.filter(function (p) { return p.visible !== false; });
+  (D.otrosProyectos || []).filter(function (o) { return o.visible !== false; }).forEach(function (o) {
+    todos.push({ nombre: o.tipo, pais: o.lugar, sector: OTROS, etiquetas: [], resultados: "", detalles: [], fotos: o.fotos, esOtro: true });
+  });
   var lista = todos.slice(), idx = 0, fotoIdx = 0;
 
   var sectores = [];
-  todos.forEach(function (p) { if (p.sector && sectores.indexOf(p.sector) < 0) sectores.push(p.sector); });
+  todos.forEach(function (p) { if (p.sector && !p.esOtro && sectores.indexOf(p.sector) < 0) sectores.push(p.sector); });
+  if (todos.some(function (p) { return p.esOtro; })) sectores.push(OTROS);
   var filtros = $("#filtros");
   ["Todos"].concat(sectores).forEach(function (s, i) {
     var b = el("button", { type: "button", "aria-pressed": i === 0 ? "true" : "false" }, s);
@@ -104,7 +109,7 @@
 
     var minis = $("#pMinis"); minis.innerHTML = "";
     if (p.fotos.length > 1) {
-      p.fotos.slice(0, 3).forEach(function (f, i) {
+      p.fotos.slice(0, 4).forEach(function (f, i) {
         var b = el("button", { type: "button", "aria-label": (f.video ? "Ver vídeo" : "Ver foto " + (i + 1)) + " de " + p.fotos.length });
         var im = el("img", { src: f.video ? (f.poster || "") : f.src, alt: "", loading: "lazy" });
         b.appendChild(im);
@@ -112,7 +117,7 @@
         b.addEventListener("click", function () { mostrarFoto(p, i); });
         minis.appendChild(b);
       });
-      minis.appendChild(el("span", null, "Imágenes de esta obra · " + Math.min(p.fotos.length, 3)));
+      minis.appendChild(el("span", null, "Imágenes de esta obra · " + Math.min(p.fotos.length, 4)));
     }
     minis.hidden = p.fotos.length < 2;
     mostrarFoto(p, 0);

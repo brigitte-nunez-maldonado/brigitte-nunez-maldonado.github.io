@@ -27,7 +27,7 @@ window.PORTAFOLIO = {
 
   /* ---------- CARTERA DE PROYECTOS ----------
      Orden: del más reciente al más antiguo.
-     fotos: el primer elemento es el principal; hasta 2 adicionales.
+     fotos: el primer elemento es el principal; hasta 3 adicionales.
      Para un vídeo usa: { video: "img/archivo.mp4", poster: "img/portada.jpg", alt: "..." } */
   proyectos: [
     {
@@ -114,7 +114,9 @@ window.PORTAFOLIO = {
       ],
       fotos: [
         { src: "img/ie-1267-1.jpg", alt: "Equipo de obra frente a los edificios en construcción" },
-        { src: "img/ie-1267-2.jpg", alt: "Brigitte Núñez supervisando trabajos de excavación con maquinaria" }
+        { src: "img/ie-1267-2.jpg", alt: "Brigitte Núñez dirigiendo una reunión de coordinación con el equipo en la oficina de obra" },
+        { src: "img/ie-1267-3.jpg", alt: "Equipo de pilotaje trabajando en el terreno de la obra" },
+        { src: "img/ie-1267-4.jpg", alt: "Grúa sobre orugas y equipo de obra en el área de trabajos" }
       ]
     },
     {
@@ -164,7 +166,10 @@ window.PORTAFOLIO = {
         "Obras viales y urbanas en Lima; intervención del Damero del Centro Histórico."
       ],
       fotos: [
-        { src: "img/lima-damero-1.jpg", alt: "Brigitte Núñez con el equipo en obras viales y urbanas de Lima" }
+        { src: "img/lima-damero-1.jpg", alt: "Brigitte Núñez con el equipo en obras viales y urbanas de Lima" },
+        { src: "img/lima-damero-2.jpg", alt: "Colocación de adoquines de piedra en una calle del Centro Histórico de Lima" },
+        { src: "img/lima-damero-3.jpg", alt: "Instalación de losas de piedra en vereda del Centro Histórico de Lima" },
+        { src: "img/lima-damero-4.jpg", alt: "Cuadrilla colocando adoquines en una calle del Centro Histórico de Lima" }
       ]
     },
     {
@@ -179,6 +184,28 @@ window.PORTAFOLIO = {
       detalles: [],
       fotos: [
         { src: "img/caminos-1.jpg", alt: "Mantenimiento de camino vecinal en zona de montaña, Canta" }
+      ]
+    }
+  ],
+
+  /* ---------- OTROS PROYECTOS ----------
+     Se muestran al final de la cartera (botón "Otros proyectos").
+     Sin nombre de proyecto: solo tipo de trabajo, lugar y hasta 3 fotos. */
+  otrosProyectos: [
+    {
+      visible: true,
+      tipo: "Movimiento de tierras",
+      lugar: "Cañete, Perú",
+      fotos: [
+        { src: "img/otros-canete-movimiento-tierras.jpg", alt: "Brigitte Núñez supervisando trabajos de movimiento de tierras con maquinaria en Cañete, Perú" }
+      ]
+    },
+    {
+      visible: true,
+      tipo: "Puente Conchucos",
+      lugar: "Perú",
+      fotos: [
+        { src: "img/otros-puente-conchucos.jpg", alt: "Collage del Puente Conchucos: charla con el equipo, movimiento de tierras y armado de acero y encofrado de estribos" }
       ]
     }
   ],
